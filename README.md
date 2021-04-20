@@ -1,4 +1,4 @@
-# Sports Almanac
+## Sports Almanac
 
 As a sports fan, the user will see a list of soccer matches where:
 - On searching for a leage, the app will display the match on the closest dates, display both teams, scheduled date for the match, and the prediction.
