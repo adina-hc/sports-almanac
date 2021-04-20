@@ -9,4 +9,4 @@
     var instances = M.FormSelect.init(elems, option);
   });
 
-   
+  M.AutoInit();
