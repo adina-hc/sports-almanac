@@ -8,9 +8,7 @@
     var option = document.querySelectorAll('option');
     var instances = M.FormSelect.init(elems, option);
   });
-
    
-
 
 /* ****************  Start  Section API 1 Functions           **************** */
  
@@ -104,3 +102,5 @@ var initSystem = function () {
 // I call the function to initialize the APP
 initSystem();
 /* ****************  End  Section Init Functions           **************** */
+
+M.AutoInit();
