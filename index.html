@@ -6,63 +6,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Links -->
-  <!-- Compiled and minified CSS -->
+ 
+  <!-- materialize icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- materialize CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- css style file link -->
   <link rel="stylesheet" href="./develop/css/style.css">
 
 
   <title>Sports Almanac</title>
+  <!-- direct style coding created to overwrite and make a custom responsive navbar even with materialize -->
+  <style>
+    header {
+      background: url(./assets/bgfield.jpg.jpg);
+      background-size: cover;
+      background-position: center;
+      min-height: 125px;
+    }
+
+    @media screen and (max-with: 670px) {
+      header {
+        min-height: 500px
+      }
+    }
+  </style>
+
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
-  </nav>
-  <header id="header-section" class="">
-    <h1>Sports Almanac --> to update name</h1>
-  </header>
-  <main>
 
-
-    <div class="container">
-      <!--   <section style="background-color: black;"> -->
-      <div class="input-field col s12">
-        <label></label>
-        <select class=“browser-default” id="listCompetitions">
-          <option value="" selected>Choose your League</option>
-        </select>
+  <!-- header section created / navbar  -->
+  <header>
+    <nav class="nav-wrapper transparent">
+      <div class="container">
+        <!-- original logo -->
+        <a href="" class="brand-logo">
+          <img src="./assets/logo.png.png" alt="sports almanac logo">
+        </a>
+        <a href="" class="sidenav-trigger" data-target="mobile-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <!-- desktop navbar menu -->
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Github</a></li>
+          <li><a href="#">Credits</a></li>
+        </ul>
+        <!-- mobile navbar menu -->
+        <ul class="sidenav grey lighten-2" id="mobile-menu">
+          <li><a href="#">Github</a></li>
+          <li><a href="#">Credits</a></li>
+        </ul>
       </div>
+
+    </nav>
+
+  </header>
+
+
+
+
+  <!-- Leage drop down selector -->
+  <div class="container">
+
+    <div class="input-field col s12">
+      <label></label>
+      <select class=“browser-default” id="listCompetitions">
+        <option value="" selected>Choose your League</option>
+      </select>
     </div>
-
-    <!-- Dropdown example below -->
-    <!-- Dropdown Trigger -->
-    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1' class='dropdown-content'>
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">three</a></li>
-      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-    </ul>
-    <!--    </section> -->
-    <section class="display-section">
-      <div id="pop-up" class=""></div>
+  </div>
 
 
-    </section>
+
+
+  <section class="display-section">
+    <div id="pop-up" class=""></div>
+
+
+  </section>
 
 
   </main>
+
+  <!-- footer section -->
+
   <footer class="page-footer">
     <div class="container">
       <div class="row">
