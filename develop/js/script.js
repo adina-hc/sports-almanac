@@ -68,6 +68,7 @@ var getCompetitionMatches = function (event) {
     }).then(function (response) {
           // I check if the API return the 200 status if not it means that there are no data 
         if (response.status == 200) {
+          saveCompetition(leagueId);
               //if the API return 200 status I parse the information to json format
             response.json().then(function (data) {
               //  I do a loop to get all the matches from that league
@@ -75,8 +76,7 @@ var getCompetitionMatches = function (event) {
                     var statusMatch = data.matches[i].status
                   //   I filter the information in order to get the matches that are Scheduled
                   if (statusMatch ==="SCHEDULED") {         
-                  // I start to pass the information into the front-end elements 
-                    console.log(data.matches[i]);
+                  // I start to pass the information into the front-end elements
                   }
                 }
                 
