@@ -15,3 +15,7 @@ var saveCompetition = function(leagueId) {
     }
 
 }
+
+var deleteCompetition = function () {
+    localStorage.setItem("league", "");
+} 
