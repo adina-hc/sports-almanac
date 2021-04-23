@@ -9,6 +9,17 @@
   main {
     flex: 1 0 auto;
   }
+
+/* history buttons - AH */
+.boton {
+  margin-left: 4.5em;
+  margin-bottom:0.5em;
+  background-color: rgb(142, 157, 98);
+  width: 10em;
+  height: 2.3em;
+
+}
+
       /* footer logo  */
 footer img {
     height: 150px;
