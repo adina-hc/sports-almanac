@@ -1,28 +1,46 @@
 ## Sports Almanac
 
 As a sports fan, the user will see a list of soccer matches where:
-- On searching for a league, the app will display the match on the closest dates, display both teams, scheduled date for the match, and the prediction.
+- On searching for a league, the app will display the match on the closest dates, display both teams, scheduled date for the match.
 
-- This valuable information can help the fan if he or she is interested in betting based on the match restuls or scores.
+- This valuable information will provide the user with statistics and an option to view highlights in of match restuls or scores in videos directly from the official team sites.
 
-- In addition, the app will provide betting tips regarding the match.
+- In addition, the app includes historic data, where if the user already performed a search for a particular league, that search will be available in for reload on the History section.
 
 ## Features
 
 * Drop-down menu to select the league
 * Search History displayed for revisit
-* Matches information to populate by date in the current week
+* Displayed data will present: 
+    - Leagues
+    - Matches of selected league
+    - Team information
+* Videos to game highlights and goals
 * Pop-up module for selected match with the match information and predictions.
 
 
-## Resources
 
-![List of resources](./assets/Resources.png)
+## Resources utilized
+
+APIs:
+
+Three APIS were utilized for this project:
+
+
+
+
+
+![List of resources](./readme-docs/resources.png)
 
 ----------------------------------
 
 ## Mock image
+Main page:
 
+
+
+Credits page:
+![Samplescreen](./readme-docs/credits.png)
 
 
 
