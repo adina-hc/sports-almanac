@@ -9,6 +9,8 @@ main {
   flex: 1 0 auto;
 }
 
+/* Direct style coding created to overwrite and make a custom responsive navbar even with materialize */
+
 /* footer logo  */
 footer img {
   height: 150px;
@@ -31,7 +33,10 @@ header {
   text-align: center;
 }
 
-/* history buttons - AH */
+.list-competitions {
+  margin-left: 0;
+}
+/* history buttons */
 .boton {
   margin-left: 4.5em;
   margin-bottom: 0.5em;
@@ -39,3 +44,4 @@ header {
   width: 10em;
   height: 2.3em;
 }
+ 
