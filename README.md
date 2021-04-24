@@ -25,7 +25,7 @@ APIs:
 
 Three APIS were utilized for this project:
 
-![List of resources](./readme-docs/resources.png)
+![List of resources](./readme-docs/Resources.png)
 
 ---
 
@@ -34,7 +34,7 @@ Three APIS were utilized for this project:
 Main page:
 
 Credits page:
-![Samplescreen](./readme-docs/credits.png)
+![Samplescreen](./readme-docs/Credits.png)
 
 ## Link to the web page
 
