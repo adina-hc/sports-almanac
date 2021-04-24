@@ -1,7 +1,12 @@
 //Save on local storage
-var saveCompetition = function(leagueId) {
+var saveCompetition = function(leagueId, leagueName) {
     var savedHistory = JSON.parse(localStorage.getItem("league")) || [];
     var isOnLocalStorage = false;
+    var leagueObject = {
+        leagueName: leagueName,
+        leagueId: leagueId
+    };
+
 
     for (var i = 0; i < savedHistory.length; i++) {
         if (savedHistory[i] === leagueId) {
@@ -10,7 +15,7 @@ var saveCompetition = function(leagueId) {
         }
     }
     if (!isOnLocalStorage) {
-        savedHistory.push(leagueId);
+        savedHistory.push(leagueObject);
     localStorage.setItem("league", JSON.stringify(savedHistory));
     }
 
