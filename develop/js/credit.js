@@ -1,4 +1,7 @@
 
+// Initialize MaterializeCss
+M.AutoInit();
+
 /* ****************  Start    Section API 3 Functions           **************** */
 var githubUsers = ['adina-hc', 'Sofiacrf', 'AdrianoArmen', 'izaack89'];
 var githubListInfo = document.querySelector("#githubListInfo");
