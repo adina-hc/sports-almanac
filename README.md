@@ -1,6 +1,7 @@
 ## Sports Almanac
 
 As a sports fan, the user will see a list of soccer matches where:
+
 - On searching for a league, the app will display the match on the closest dates, display both teams, scheduled date for the match.
 
 - This valuable information will provide the user with statistics and an option to view highlights in of match restuls or scores in videos directly from the official team sites.
@@ -19,6 +20,8 @@ As a sports fan, the user will see a list of soccer matches where:
 * Pop-up module for selected match with the match information and predictions.
 
 ______________________
+=======
+
 
 ## Resources utilized
 
@@ -31,18 +34,18 @@ Three APIS were utilized for this project:
 
 
 ![List of resources](./readme-docs/Resources.png)
+=======
 
-----------------------------------
+
+---
 
 ## Mock image
+
 Main page:
-
-
 
 Credits page:
 ![Samplescreen](./readme-docs/Credits.png)
 
-
-
 ## Link to the web page
+
 [Link to the web page](https://...)
