@@ -5,7 +5,7 @@ As a sports fan, the user will see a list of soccer matches where:
 
 - This valuable information will provide the user with statistics and an option to view highlights in of match restuls or scores in videos directly from the official team sites.
 
-- In addition, the app includes historic data, where if the user already performed a search for a particular league, that search will be available in for reload on the History section.
+- In addition, the app includes historical data, where if the user already performed a search for a particular league, that search will be available in for reload on the History section.
 
 ## Features
 
@@ -18,7 +18,7 @@ As a sports fan, the user will see a list of soccer matches where:
 * Videos to game highlights and goals
 * Pop-up module for selected match with the match information and predictions.
 
-
+______________________
 
 ## Resources utilized
 
@@ -30,7 +30,7 @@ Three APIS were utilized for this project:
 
 
 
-![List of resources](./readme-docs/resources.png)
+![List of resources](./readme-docs/Resources.png)
 
 ----------------------------------
 
@@ -40,7 +40,7 @@ Main page:
 
 
 Credits page:
-![Samplescreen](./readme-docs/credits.png)
+![Samplescreen](./readme-docs/Credits.png)
 
 
 
