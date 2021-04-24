@@ -24,7 +24,7 @@ var team2draws = document.querySelector("#team2draws");
 var team2losses = document.querySelector("#team2losses");
 var playersListTeam2 = document.querySelector("#playersListTeam2");
 var coachTeam2 = document.querySelector("#coachTeam2");
-
+var historyList = document.querySelector("#historyList");
 
 // I get the list of the competitions from the API
 var getCompetitionsList = function () {
@@ -87,7 +87,9 @@ var getCompetitionMatches  = function (leagueId,leagueName){
     }).then(function (response) {
       // I check if the API return the 200 status if not it means that there are no data 
       if (response.status == 200) {
+
         saveCompetition(leagueId,leagueName);
+
         //if the API return 200 status I parse the information to json format
         response.json().then(function (data) {
           //  I do a loop to get all the matches from that league
@@ -107,6 +109,29 @@ var getCompetitionMatches  = function (leagueId,leagueName){
     console.log('No results');
   }
 }
+
+// Function to create button with history of searches -()
+//class="waves-effect waves-light btn boton
+function generateBtn(leagueId,leagueName) {
+  var newLi = document.createElement("li");
+  var newA = document.createElement("a");
+  newA.setAttribute("class","wave-effect waves-light btn boton");
+  newLi.appendChild(newA);
+  newA.setAttribute("data-value",leagueId+";"+leagueName);
+  historyList.appendChild(newLi);
+  newA.textContent = leagueName; 
+}
+generateBtn("1","ggg");
+generateBtn("2","CCC");
+
+// On click of history button, display data
+// Store the value of the history
+function displayHistory(e) {
+  console.log(e.target.dataset.value);
+  console.log(e);
+}
+
+
 
 
 // I get the teamsInfo of a match  from the API
@@ -246,3 +271,5 @@ var initSystem = function () {
 initSystem();
 /* ****************  End  Section Init Functions           **************** */
 
+// Event listener for History button
+historyList.addEventListener('click',displayHistory);
