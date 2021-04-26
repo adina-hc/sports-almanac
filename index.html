@@ -55,75 +55,80 @@
     <div class="row">
       <!-- Leage drop down selector -->
       <div class="col l3 s12 container list-competitions">
+        <div class="row">
 
-        <div class="input-field">
-          <label></label>
-          <select class=“browser-default” id="listCompetitions">
-            <option value="" selected>Choose your League</option>
-          </select>
+            <div class="col l12 s12">
+              <div class="input-field">
+                <label></label>
+                <select class=“browser-default” id="listCompetitions">
+                  <option value="" selected>Choose your League</option>
+                </select>
+              </div>
+            </div>
+            <div class="col l12 s12">
+              <!-- Historic Data Template -->
+              <div class="history">
+                <ul id="historyList">
+                </ul>
+
+              </div>
+            </div>
         </div>
-
       </div>
 
       <div class="col l9 s12 ">
-        <div class="card horizontal hoverable">
-          <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
-              <h5>Team 1 VS Team 2</h5>
+        <h3>Matchs</h3>
+        <div class="row" id="gameListMatchs">
+          <div class="col l10 s12">
+            <div class="card horizontal hoverable">
+              <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
+                  <h5>Team 1 VS Team 2</h5>
 
+                  <p>Match Date: 24/04/2021</p>
 
+                </div>
 
+              </div>
             </div>
+          </div>
 
+          <div class="col l10 s12">
+            <div class="card horizontal hoverable">
+              <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
+                  <h5>Team 1 VS Team 2</h5>
+
+                  <p>Match Date: 24/04/2021</p>
+
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <h3>Highlights</h3>
 
-      <!-- additional cards created with offset 3 on large screens -->
-      <div class="col l9 s12 offset-l3">
-        <div class="card horizontal hoverable">
-          <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
-              <h5>Team 1 VS Team 2</h5>
-
-              <p>Match Date: 24/04/2021</p>
-
-            </div>
-
+        <div class="row" id="gameListVideos">
+          <div class="col l10 s12">
+              <div class="video-container" style="margin: 10px 0 10px 0">
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0"
+                  allowfullscreen></iframe>
+              </div>
           </div>
-        </div>
-      </div>
-
-      <div class="col l9 s12 offset-l3">
-        <div class="card horizontal hoverable">
-          <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
-              <h5>Team 1 VS Team 2</h5>
-
-              <p>Match Date: 24/04/2021</p>
-
+          <div class="col l10 s12">
+            <div class="video-container">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0"
+                allowfullscreen></iframe>
             </div>
-
           </div>
-        </div>
+        </div>        
       </div>
-
     </div>
-
-    </div>
-    <!-- Historic Data Template -->
-    <div class="history">
-      <ul id="historyList">
-        <li><a class="waves-effect waves-light btn boton">League</a></li>
-        <li><a class="waves-effect waves-light btn boton">League</a></li>
-        <li><a class="waves-effect waves-light btn boton">League</a></li>
-      </ul>
 
     </div>
 
@@ -157,6 +162,7 @@
     </div>
 
   </footer>
+
 
   <!-- Modal section -->
   <div id="gameInfo" class="modal">

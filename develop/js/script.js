@@ -121,8 +121,6 @@ function generateBtn(leagueId,leagueName) {
   historyList.appendChild(newLi);
   newA.textContent = leagueName; 
 }
-generateBtn("1","ggg");
-generateBtn("2","CCC");
 
 // On click of history button, display data
 // Store the value of the history
