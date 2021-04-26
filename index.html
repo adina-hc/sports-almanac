@@ -52,28 +52,80 @@
 
 
   <main>
+    <div class="row">
+      <!-- Leage drop down selector -->
+      <div class="col l3 s12 container list-competitions">
 
-    <!-- Leage drop down selector -->
-    <div class="container list-competitions">
-      <div class="row">
-        <div class="input-field col s3">
+        <div class="input-field">
           <label></label>
           <select class=“browser-default” id="listCompetitions">
             <option value="" selected>Choose your League</option>
           </select>
         </div>
+
       </div>
+
+      <div class="col l9 s12 ">
+        <div class="card horizontal hoverable">
+          <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
+              <h5>Team 1 VS Team 2</h5>
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- additional cards created with offset 3 on large screens -->
+      <div class="col l9 s12 offset-l3">
+        <div class="card horizontal hoverable">
+          <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
+              <h5>Team 1 VS Team 2</h5>
+
+              <p>Match Date: 24/04/2021</p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col l9 s12 offset-l3">
+        <div class="card horizontal hoverable">
+          <div class="card-image"><img id="matchesimage" src="./assets/matches.png"></div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <a class="btn-floating right btn-large grey pulse"><i class="material-icons">info_outline</i></a>
+              <h5>Team 1 VS Team 2</h5>
+
+              <p>Match Date: 24/04/2021</p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
-     
 
+    </div>
+    <!-- Historic Data Template -->
+    <div class="history">
+      <ul id="historyList">
+        <li><a class="waves-effect waves-light btn boton">League</a></li>
+        <li><a class="waves-effect waves-light btn boton">League</a></li>
+        <li><a class="waves-effect waves-light btn boton">League</a></li>
+      </ul>
 
-<!-- Historic Data Template -->
-  <div class="history">
-    <ul id="historyList">
-
-    </ul>
-
-  </div>
+    </div>
 
 
 
@@ -152,7 +204,7 @@
           </div>
           <div class="row text-center">
             <div class="col s12">
-              <img  id="team2logo"  style="max-width: 100px;">
+              <img id="team2logo" style="max-width: 100px;">
             </div>
           </div>
 
