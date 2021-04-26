@@ -1,47 +1,57 @@
-/* sticky footer style */
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-/* Direct style coding created to overwrite and make a custom responsive navbar even with materialize */
-
-/* footer logo  */
-footer img {
-  height: 150px;
-}
-
-header {
-  background: url(../../assets/bgfield.jpg.jpg);
-  background-size: cover;
-  background-position: center;
-  min-height: 125px;
-}
-
-@media screen and (max-with: 670px) {
-  header {
-    min-height: 500px;
+  /* sticky footer style */
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
   }
-}
-
-.text-center {
-  text-align: center;
-}
-
-.list-competitions {
-  margin-left: 0;
-}
-/* history buttons */
-.boton {
-  margin-left: 4.5em;
-  margin-bottom: 0.5em;
-  background-color: rgb(142, 157, 98);
-  width: 10em;
-  height: 2.3em;
-}
- 
+  
+  main {
+    flex: 1 0 auto;
+  }
+  
+  main img {
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  #matchesimage { margin-top: 15px;
+    margin-left: 15px;
+  
+  }
+  
+  
+  footer img {
+    height: 130px;
+    
+  }
+  
+  header {
+    background: url(../../assets/bgfield.jpg.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 125px;
+  }
+  
+  @media screen and (max-with: 670px) {
+    header {
+      min-height: 500px;
+    }
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  
+  /* history buttons */
+  .boton {
+    margin-left: 4.5em;
+    margin-bottom: 0.5em;
+    background-color: rgb(142, 157, 98);
+    width: 10em;
+    height: 2.3em;
+  }
+   
