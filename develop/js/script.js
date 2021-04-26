@@ -24,7 +24,7 @@ var team2draws = document.querySelector("#team2draws");
 var team2losses = document.querySelector("#team2losses");
 var playersListTeam2 = document.querySelector("#playersListTeam2");
 var coachTeam2 = document.querySelector("#coachTeam2");
-
+var historyList = document.querySelector("#historyList");
 
 // I get the list of the competitions from the API
 var getCompetitionsList = function () {
@@ -48,7 +48,7 @@ var getCompetitionsList = function () {
           if (data.competitions[i].plan == "TIER_ONE") {
             //Create the element of the option that I will use to display the leagues
             var opt = document.createElement("option");
-            opt.value = data.competitions[i].id;
+            opt.value = data.competitions[i].id + ";" + data.competitions[i].name;
             opt.innerHTML = data.competitions[i].name;
             // then append it to the select element
             listCompetitions.appendChild(opt);
@@ -64,8 +64,14 @@ var getCompetitionsList = function () {
 }
 
 // I get the list of the competitions matches from the API
-var getCompetitionMatches = function (event) {
-  var leagueId = event.target.value;
+var getEventLeague = function (event) {  
+  var eventData = (event.target.value).split(";");
+  var leagueId = eventData[0];
+  var leagueName = eventData[1];
+  getCompetitionMatches(leagueId, leagueName);
+}
+
+var getCompetitionMatches  = function (leagueId,leagueName){
   // I check if the select have a value
   if (leagueId != "") {
     // I get the league ID value so I can use it to set the URL 
@@ -81,7 +87,9 @@ var getCompetitionMatches = function (event) {
     }).then(function (response) {
       // I check if the API return the 200 status if not it means that there are no data 
       if (response.status == 200) {
-        saveCompetition(leagueId);
+
+        saveCompetition(leagueId,leagueName);
+
         //if the API return 200 status I parse the information to json format
         response.json().then(function (data) {
           //  I do a loop to get all the matches from that league
@@ -102,6 +110,29 @@ var getCompetitionMatches = function (event) {
   }
 }
 
+// Function to create button with history of searches -()
+//class="waves-effect waves-light btn boton
+function generateBtn(leagueId,leagueName) {
+  var newLi = document.createElement("li");
+  var newA = document.createElement("a");
+  newA.setAttribute("class","wave-effect waves-light btn boton");
+  newLi.appendChild(newA);
+  newA.setAttribute("data-value",leagueId+";"+leagueName);
+  historyList.appendChild(newLi);
+  newA.textContent = leagueName; 
+}
+generateBtn("1","ggg");
+generateBtn("2","CCC");
+
+// On click of history button, display data
+// Store the value of the history
+function displayHistory(e) {
+  console.log(e.target.dataset.value);
+  console.log(e);
+}
+
+
+
 
 // I get the teamsInfo of a match  from the API
 
@@ -112,6 +143,7 @@ var gameMatchInfo = function (matchId) {
 
   // I do the fecth and I also add headers to set the token that I get from the API
   fetch(apiUrl, {
+    mode: 'no-cors',
     cache: 'no-cache',
     headers: {
       'X-Auth-Token': '9df998956f9649df8ee3ca86b464e05b',
@@ -224,7 +256,7 @@ var getInfoTeam = function (teamId, ishomeTeam) {
 }
 
 // I add a listener to the select so once the user select a league can return the matches 
-listCompetitions.addEventListener('change', getCompetitionMatches);
+listCompetitions.addEventListener('change', getEventLeague);
 /* ****************  End    Section API 1 Functions           **************** */
 
 
@@ -239,3 +271,5 @@ var initSystem = function () {
 initSystem();
 /* ****************  End  Section Init Functions           **************** */
 
+// Event listener for History button
+historyList.addEventListener('click',displayHistory);
