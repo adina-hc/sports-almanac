@@ -89,6 +89,7 @@ var getCompetitionMatches  = function (leagueId,leagueName){
       if (response.status == 200) {
 
         saveCompetition(leagueId,leagueName);
+        matchVideosApi(leagueName);
 
         //if the API return 200 status I parse the information to json format
         response.json().then(function (data) {
@@ -98,7 +99,7 @@ var getCompetitionMatches  = function (leagueId,leagueName){
             //   I filter the information in order to get the matches that are Scheduled
             if (statusMatch === "SCHEDULED") {
               // I start to pass the information into the front-end elements
-              console.log(data.matches[i]);
+              // console.log(data.matches[i]);
             }
           }
 
@@ -121,8 +122,6 @@ function generateBtn(leagueId,leagueName) {
   historyList.appendChild(newLi);
   newA.textContent = leagueName; 
 }
-generateBtn("1","ggg");
-generateBtn("2","CCC");
 
 // On click of history button, display data
 // Store the value of the history
