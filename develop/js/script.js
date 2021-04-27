@@ -69,6 +69,7 @@ var getCompetitionsList = function () {
 var getCompetitionMatches = function (leagueId, leagueName) {
   // I clean the gameMatch List
   gameListMatchs.textContent = "";
+  var checkSeasonGames = 0;
   // I check if the select have a value
   if (leagueId != "") {
     // I get the league ID value so I can use it to set the URL 
@@ -86,7 +87,7 @@ var getCompetitionMatches = function (leagueId, leagueName) {
       if (response.status == 200) {
 
         saveCompetition(leagueId,leagueName);
-
+        matchVideosApi(leagueName);
         //if the API return 200 status I parse the information to json format
         response.json().then(function (data) {
           //  I do a loop to get all the matches from that league
@@ -94,6 +95,7 @@ var getCompetitionMatches = function (leagueId, leagueName) {
             var statusMatch = data.matches[i].status
             //   I filter the information in order to get the matches that are Scheduled
             if (statusMatch === "SCHEDULED") {
+              checkSeasonGames++;
               // I start to pass the information into the front-end elements
               //Create the  elements for the DOM
               var divCol = document.createElement('div');
@@ -142,7 +144,13 @@ var getCompetitionMatches = function (leagueId, leagueName) {
               gameListMatchs.append(divCol);
             }
           }
-
+          if (checkSeasonGames === 0) {
+            
+              var h5TitleMatch = document.createElement('h5');
+              h5TitleMatch.textContent = "Season is Over";
+              h5TitleMatch.setAttribute('style', 'text-align:center');
+              gameListMatchs.append(h5TitleMatch);
+          }
         });
       }
     });
@@ -318,7 +326,7 @@ var getEventMatch = function (e) {
 // Store the value of the history
 function displayHistory(event) {
 
-  var eventData = (event.target.value).split(";");
+  var eventData = (event.target.dataset.value).split(";");
   var leagueId = eventData[0];
   var leagueName = eventData[1];
   getCompetitionMatches(leagueId, leagueName);
