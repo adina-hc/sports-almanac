@@ -10,18 +10,16 @@ As a sports fan, the user will see a list of soccer matches where:
 
 ## Features
 
-* Drop-down menu to select the league
-* Search History displayed for revisit
-* Displayed data will present: 
-    - Leagues
-    - Matches of selected league
-    - Team information
-* Videos to game highlights and goals
-* Pop-up module for selected match with the match information and predictions.
+- Drop-down menu to select the league
+- Search History displayed for revisit
+- Displayed data will present:
+  - Leagues
+  - Matches of selected league
+  - Team information
+- Videos to game highlights and goals
+- Pop-up module for selected match with the match information and scores.
 
-______________________
-=======
-
+---
 
 ## Resources utilized
 
@@ -29,13 +27,7 @@ APIs:
 
 Three APIS were utilized for this project:
 
-
-
-
-
 ![List of resources](./readme-docs/Resources.png)
-=======
-
 
 ---
 
@@ -48,4 +40,4 @@ Credits page:
 
 ## Link to the web page
 
-[Link to the web page](https://...)
+[Link to the web page](https://adina-hc.github.io/sports-almanac/)

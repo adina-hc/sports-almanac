@@ -325,7 +325,7 @@ function displayHistory(event) {
 
 // I get the list of the competitions matches from the API
 var getEventLeague = function (event) {  
-  var eventData = (event.target.value).split(";");
+  var eventData = (event.target.dataset.value).split(";");
   var leagueId = eventData[0];
   var leagueName = eventData[1];
   getCompetitionMatches(leagueId, leagueName);
