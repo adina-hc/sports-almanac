@@ -317,7 +317,12 @@ var getEventMatch = function (e) {
 // On click of history button, display data
 // Store the value of the history
 function displayHistory(event) {
-  //Code Here
+  
+  //leagueId.value = e.target.eventData[0].value;
+  //leagueName.value = e.target.eventData[1];
+  getCompetitionMatches(e.target.eventData.value)
+
+
 }
 
 // I get the list of the competitions matches from the API
