@@ -5,6 +5,7 @@ function matchVideosApi (leagueName){
     var checkDate = moment();
     var checkSeasonVideos = 0;
     var gameList = document.querySelector("#gameListVideos");
+    gameList.textContent = "";
 // Fecth test function
 fetch(apiUrl)
 .then(function (response) {
