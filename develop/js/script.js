@@ -317,6 +317,7 @@ var getEventMatch = function (e) {
 // On click of history button, display data
 // Store the value of the history
 function displayHistory(event) {
+
   var eventData = (event.target.value).split(";");
   var leagueId = eventData[0];
   var leagueName = eventData[1];
