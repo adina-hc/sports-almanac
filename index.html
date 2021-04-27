@@ -52,28 +52,54 @@
 
 
   <main>
+    <div class="row">
+      <!-- Leage drop down selector -->
+      <div class="col l3 s12 container list-competitions">
+        <div class="row">
 
-    <!-- Leage drop down selector -->
-    <div class="container list-competitions">
-      <div class="row">
-        <div class="input-field col s3">
-          <label></label>
-          <select class=“browser-default” id="listCompetitions">
-            <option value="" selected>Choose your League</option>
-          </select>
+            <div class="col l12 s12">
+              <div class="input-field">
+                <label></label>
+                <select class=“browser-default” id="listCompetitions">
+                  <option value="" selected>Choose your League</option>
+                </select>
+              </div>
+            </div>
+            <div class="col l12 s12">
+              <!-- Historic Data Template -->
+              <div class="history">
+                <ul id="historyList">
+                </ul>
+
+              </div>
+            </div>
         </div>
       </div>
+
+      <div class="col l9 s12 ">
+        <h3>Matchs</h3>
+        <div class="row" id="gameListMatchs">
+        </div>
+        <h3>Highlights</h3>
+
+        <div class="row" id="gameListVideos">
+          <div class="col l10 s12">
+              <div class="video-container" style="margin: 10px 0 10px 0">
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0"
+                  allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="col l10 s12">
+            <div class="video-container">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>        
+      </div>
     </div>
-     
 
-
-<!-- Historic Data Template -->
-  <div class="history">
-    <ul id="historyList">
-
-    </ul>
-
-  </div>
+    </div>
 
 
 
@@ -105,6 +131,7 @@
     </div>
 
   </footer>
+
 
   <!-- Modal section -->
   <div id="gameInfo" class="modal">
@@ -152,7 +179,7 @@
           </div>
           <div class="row text-center">
             <div class="col s12">
-              <img  id="team2logo"  style="max-width: 100px;">
+              <img id="team2logo" style="max-width: 100px;">
             </div>
           </div>
 
@@ -186,7 +213,6 @@
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-
   <!-- Custom JS -->
   <script src="develop/js/apivideo.js"></script>
   <script src="./develop/js/localstorage.js"></script>

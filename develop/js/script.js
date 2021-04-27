@@ -25,6 +25,8 @@ var team2losses = document.querySelector("#team2losses");
 var playersListTeam2 = document.querySelector("#playersListTeam2");
 var coachTeam2 = document.querySelector("#coachTeam2");
 var historyList = document.querySelector("#historyList");
+var gameListMatchs = document.querySelector("#gameListMatchs");
+var savedHistory = [];
 
 // I get the list of the competitions from the API
 var getCompetitionsList = function () {
@@ -63,15 +65,10 @@ var getCompetitionsList = function () {
   });
 }
 
-// I get the list of the competitions matches from the API
-var getEventLeague = function (event) {  
-  var eventData = (event.target.value).split(";");
-  var leagueId = eventData[0];
-  var leagueName = eventData[1];
-  getCompetitionMatches(leagueId, leagueName);
-}
 
-var getCompetitionMatches  = function (leagueId,leagueName){
+var getCompetitionMatches = function (leagueId, leagueName) {
+  // I clean the gameMatch List
+  gameListMatchs.textContent = "";
   // I check if the select have a value
   if (leagueId != "") {
     // I get the league ID value so I can use it to set the URL 
@@ -99,7 +96,51 @@ var getCompetitionMatches  = function (leagueId,leagueName){
             //   I filter the information in order to get the matches that are Scheduled
             if (statusMatch === "SCHEDULED") {
               // I start to pass the information into the front-end elements
-              // console.log(data.matches[i]);
+              //Create the  elements for the DOM
+              var divCol = document.createElement('div');
+              var divCard = document.createElement('div');
+              var divCardImg = document.createElement('div');
+              var imgMatch = document.createElement('img');
+              var divCardStacked = document.createElement('div');
+              var divCardContent = document.createElement('div');
+              var aButton = document.createElement('a');
+              var icon = document.createElement('i');
+              var h5TitleMatch = document.createElement('h5');              
+              var pDate = document.createElement('p');
+
+              //Setting the classes of the elements 
+
+              divCol.setAttribute('class', 'col l10 s12');
+              divCard.setAttribute('class', 'card horizontal hoverable');
+              divCardImg.setAttribute('class', 'card-image');
+              divCardStacked.setAttribute('class', 'card-stacked');
+              divCardContent.setAttribute('class', 'card-content');
+              aButton.setAttribute('class', 'btn-floating right btn-large grey pulse');
+              icon.setAttribute('class', 'material-icons');
+              icon.setAttribute('data-value', data.matches[i].id);
+              // Settting the content to the elements 
+
+              imgMatch.src = './assets/matches.png';
+              imgMatch.id = 'matchesimage';
+              icon.textContent = 'info_outline';
+              h5TitleMatch.textContent = data.matches[i].homeTeam.name + " vs " + data.matches[i].awayTeam.name;
+              pDate.textContent = 'Match Date: '+  moment(data.matches[i].utcDate).format('MMM Do hh:mm:ss, YYYY');    
+
+              //Append the elements
+              aButton.append(icon);
+              divCardContent.appendChild(aButton);
+              divCardContent.appendChild(h5TitleMatch);
+              divCardContent.appendChild(pDate);
+
+              divCardImg.append(imgMatch);
+              divCardStacked.append(divCardContent);
+
+              divCard.append(divCardImg);
+              divCard.append(divCardStacked);
+
+              divCol.append(divCard);
+
+              gameListMatchs.append(divCol);
             }
           }
 
@@ -132,17 +173,37 @@ function displayHistory(e) {
 
 
 
+var cleanModalInfo = function () {
+  
+        gameTitle.textContent = "";
+        // I append the information of the Home team
+        team1wins.textContent = "";
+        team1draws.textContent = "";
+        team1losses.textContent = "";
+        tema1tab.textContent = "";
+        // I append the information of the Away team
+        team2wins.textContent = "";
+        team2draws.textContent = "";
+        team2losses.textContent = "";
+        tema2tab.textContent = "";
+        playersListTeam1.textContent = "";
+        playersListTeam2.textContent = "";
+        coachTeam1.textContent = "";
+        coachTeam2.textContent = "";
+}
 
 // I get the teamsInfo of a match  from the API
 
 var gameMatchInfo = function (matchId) {
+// Clean the modal Info
+  cleanModalInfo()
+
   // I get the league ID value so I can use it to set the URL 
   var apiUrl =
     "https://api.football-data.org/v2/matches/" + matchId
 
   // I do the fecth and I also add headers to set the token that I get from the API
   fetch(apiUrl, {
-    mode: 'no-cors',
     cache: 'no-cache',
     headers: {
       'X-Auth-Token': '9df998956f9649df8ee3ca86b464e05b',
@@ -192,7 +253,6 @@ var getInfoTeam = function (teamId, ishomeTeam) {
       //if the API return 200 status I parse the information to json format
       response.json().then(function (data) {
         //  I do a loop to get all the matches from that league
-        console.log(data);
         // I insert the logo of the team
         if (ishomeTeam) {
           team1logo.src = data.crestUrl;
@@ -253,22 +313,60 @@ var getInfoTeam = function (teamId, ishomeTeam) {
     }
   });
 }
+/* ****************  End    Section API 1 Functions           **************** */
+/* ****************  Start Section Event Listeners   Functions         **************** */
+var getEventMatch = function (e) {
+  var matchId = e.target.dataset.value;
+  if (matchId === null) {
+    return null;
+  }
+  gameMatchInfo(matchId);
+}
 
+// On click of history button, display data
+// Store the value of the history
+function displayHistory(event) {
+  //Code Here
+}
+
+// I get the list of the competitions matches from the API
+var getEventLeague = function (event) {  
+  var eventData = (event.target.value).split(";");
+  var leagueId = eventData[0];
+  var leagueName = eventData[1];
+  getCompetitionMatches(leagueId, leagueName);
+}
+
+/* ****************  End Section Event Listeners   Functions         **************** */
+/* ****************  Start Section Event Listeners           **************** */
 // I add a listener to the select so once the user select a league can return the matches 
 listCompetitions.addEventListener('change', getEventLeague);
-/* ****************  End    Section API 1 Functions           **************** */
-
-
+//This event is for the Game list Match in order to display the information of the teams 
+gameListMatchs.addEventListener('click', getEventMatch);
+// Event listener for History button
+historyList.addEventListener('click',displayHistory);
+/* ****************  End Section Event Listeners           **************** */
 
 /* ****************  Start  Section Init Functions           **************** */
 
 
 var initSystem = function () {
+  savedHistory = localStorage.getItem("league");
+  if (savedHistory !== null && savedHistory.length>0) {
+      //If exist I parse the elements in order to be array
+      savedHistory = JSON.parse(localStorage.getItem("league"));    
+      // if is not null I do a loop to get the information of all the cities         
+      for (i = 0; i < savedHistory.length; i++) {
+          // I call the function that create the buttons
+          generateBtn(savedHistory[i].leagueId,savedHistory[i].leagueName);
+      }
+  } else {
+      // if is null I declare the variable as null and as array
+      savedHistory = [];
+  }
+  
   getCompetitionsList();
 }
 // I call the function to initialize the APP
 initSystem();
 /* ****************  End  Section Init Functions           **************** */
-
-// Event listener for History button
-historyList.addEventListener('click',displayHistory);
