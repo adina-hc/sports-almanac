@@ -86,7 +86,6 @@ var getCompetitionMatches = function (leagueId, leagueName) {
       if (response.status == 200) {
 
         saveCompetition(leagueId,leagueName);
-        matchVideosApi(leagueName);
 
         //if the API return 200 status I parse the information to json format
         response.json().then(function (data) {
@@ -163,14 +162,6 @@ function generateBtn(leagueId,leagueName) {
   historyList.appendChild(newLi);
   newA.textContent = leagueName; 
 }
-
-// On click of history button, display data
-// Store the value of the history
-function displayHistory(e) {
-  console.log(e.target.dataset.value);
-  console.log(e);
-}
-
 
 
 var cleanModalInfo = function () {
@@ -326,7 +317,10 @@ var getEventMatch = function (e) {
 // On click of history button, display data
 // Store the value of the history
 function displayHistory(event) {
-  //Code Here
+  var eventData = (event.target.value).split(";");
+  var leagueId = eventData[0];
+  var leagueName = eventData[1];
+  getCompetitionMatches(leagueId, leagueName);
 }
 
 // I get the list of the competitions matches from the API
