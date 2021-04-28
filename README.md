@@ -44,11 +44,17 @@ Mobile Screen:
 
 ---
 
-## Mock image
+## Mockup
+----
 
-Main page:
+
+App Functionality:
+----
+![Samplescreen](./readme-docs/appfunctionality.gif)
+
 
 Credits page:
+----
 ![Samplescreen](./readme-docs/Credits.png)
 
 ## Link to the web page
