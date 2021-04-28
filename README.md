@@ -29,6 +29,19 @@ Three APIS were utilized for this project:
 
 ![List of resources](./readme-docs/Resources.png)
 
+
+---
+
+## Wireframe
+
+Desktop Screen:
+----
+![Samplescreen](./readme-docs/wireframepc.png)
+
+Mobile Screen:
+----
+![Samplescreen](./readme-docs/wireframemobile.png)
+
 ---
 
 ## Mock image
