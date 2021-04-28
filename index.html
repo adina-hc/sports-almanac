@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Links -->
 
+  <!-- favicon installation -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
   <!-- materialize icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- materialize CDN -->
@@ -49,7 +54,9 @@
 
   </header>
 
-
+  <div class="progress">
+    <div class="indeterminate"></div>
+  </div>
 
   <main>
     <div class="row">
@@ -57,33 +64,37 @@
       <div class="col l3 s12 container list-competitions">
         <div class="row">
 
-            <div class="col l12 s12">
-              <div class="input-field">
-                <label></label>
-                <select class=“browser-default” id="listCompetitions">
-                  <option value="" selected>Choose your League</option>
-                </select>
-              </div>
+          <div class="col l12 s12">
+            <div class="input-field">
+              <label></label>
+              <select class=“browser-default” id="listCompetitions">
+                <option value="" selected>Choose your League</option>
+              </select>
             </div>
-            <div class="col l12 s12">
-              <!-- Historic Data Template -->
-              <div class="history">
-                <ul id="historyList">
-                </ul>
+          </div>
+          <div class="col l12 s12">
+            <!-- Historic Data Template -->
+            <div class="history">
+              <ul id="historyList">
+              </ul>
 
-              </div>
             </div>
+          </div>
         </div>
       </div>
 
       <div class="col l9 s12 ">
-        <h3>Matches</h3>
+        <a href="#">
+          <img id="headingimages" src="./assets/matchesheading.png" alt="matches heading">
+        </a>
         <div class="row" id="gameListMatchs">
         </div>
-        <h3>Highlights</h3>
+        <a href="#">
+          <img id="headingimages" src="./assets/highlightsheading.png" alt="highlights heading">
+        </a>
 
         <div class="row" id="gameListVideos">
-        </div>        
+        </div>
       </div>
     </div>
 

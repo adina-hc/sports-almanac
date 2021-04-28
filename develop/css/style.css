@@ -21,11 +21,16 @@
     margin-left: 15px;
   
   }
-  
+  #headingimages {
+    height: 250px;
+    width: auto;
+    align-self: center;
+
+  }
   
   footer img {
     height: 130px;
-    
+    margin-right: 100px;
   }
   
   header {
