@@ -23,23 +23,18 @@ As a sports fan, the user will see a list of soccer matches where:
 
 ## Resources utilized
 
-APIs:
-
-Three APIS were utilized for this project:
-
 ![List of resources](./readme-docs/Resources.png)
-
 
 ---
 
 ## Wireframe
 
-Desktop Screen:
-----
+## Desktop Screen:
+
 ![Samplescreen](./readme-docs/wireframepc.png)
 
-Mobile Screen:
-----
+## Mobile Screen:
+
 ![Samplescreen](./readme-docs/wireframemobile.png)
 
 ---
